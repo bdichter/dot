@@ -77,6 +77,7 @@ ZSH_THEME="agnoster"
 #  rake
 #)
 
+ZSH=/home/oobisan/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -140,20 +141,8 @@ alias ip='curl ifconfig.me/ip'
 alias clearcache='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 alias lines='for file in *; do cat "$file"; done | wc -l'
 
-# terraform
-alias tfplan='tf plan -out tfplan.binary'
-alias tfapply='tf apply tfplan.binary'
-
 export HISTTIMEFORMAT='%F %T '
 
 # go path
 export PATH=$PATH:/usr/local/go/bin
 
-# kubectl
-source <(kubectl completion zsh)
-
-source ~/.helmrc
-
-# eksctl completion
-fpath=($fpath ~/.zsh/completion)
-[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
